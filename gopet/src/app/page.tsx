@@ -1,9 +1,9 @@
 'use client';
-import LocalHotel from "./components/main/LocalHotel";
 import Header from "./components/main/Header";
 import { useToggleNav } from "./components/hooks/useToggleNav";
-import VolunteerList from "./components/main/VolunteerList";
 import AdoptEmblaCarousel from "./components/AdoptEmblaCarousel";
+import HotelShelter from "./components/HotelShelter";
+import VolunteerList from "./volunteerlist/page";
 
 const OPTIONS = { loop: true}
 const SLIDE_COUNT = 8
@@ -14,10 +14,8 @@ const Home = () => {
     return (
         <>
             <Header isNavOpen={isNavOpen} toggleNav={toggleNav}/>
-            <LocalHotel />
-            <VolunteerList />
+            <HotelShelter/>
             <AdoptEmblaCarousel slides={SLIDES} options={OPTIONS}/>
-            
         </>
     )
 }
