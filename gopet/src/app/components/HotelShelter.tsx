@@ -37,7 +37,7 @@ export default function HotelShelter() {
                 alt=""
                 style={{ width: "50%" }}
               />
-              <p className="text-6xl">보호소</p>
+              <p className="text-6xl">봉사활동</p>
             </button>
           </Link>
           
