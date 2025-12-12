@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Header from "./components/main/Header";
 import PageUpButton from "./components/main/PageUpButton";
-import Footer from "./components/main/Footer";
+import EmblaCarousel from "./components/AdoptEmblaCarousel";
+
 
 export const metadata: Metadata = {
   title: "GoPet",
