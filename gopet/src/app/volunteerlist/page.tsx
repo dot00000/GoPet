@@ -35,8 +35,8 @@ const VolunteerList = () => {
       <Header isNavOpen={isNavOpen} toggleNav={toggleNav} />
       <h1 className="flex justify-center text-3xl mt-10 p-10">💗 봉사활동 List</h1>
           {volunData.map((p, index) => (
-            <div className="flex justify-center">
-              <div key={index} className="rounded-3xl border mb-5" style={{ width: "50%", height: "220px"}}>
+            <div key={index} className="flex justify-center">
+              <div  className="rounded-3xl border mb-5" style={{ width: "50%", height: "220px"}}>
                 <div className="ml-5 mr-5 text-xl">
                   <h2 className="flex justify-center text-black text-2xl p-4">{p.name}</h2>
                   <div className="flex">
