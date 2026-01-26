@@ -531,6 +531,7 @@ export default function Hotel({ mapId = "map", initialZoom = 10 }: Props) {
         return setHotelMarkers(newMarkers);
       }
   };
+  
   // 호텔 위치 버튼
   const handleHotelLocationClick = () => showMarkers("hotel", "펜션");
 

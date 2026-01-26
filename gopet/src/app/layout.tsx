@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import PageUpButton from "./components/main/PageUpButton";
-import EmblaCarousel from "./components/AdoptEmblaCarousel";
+import Providers from "./providers";
 
 
 export const metadata: Metadata = {
@@ -13,7 +13,9 @@ export default function RootLayout({ children }: { children: React.ReactNode}) {
   return (
     <html lang="en">
       <body>
-          {children}
+          <Providers>
+            {children}
+          </Providers>
           <PageUpButton />
       </body>
     </html>

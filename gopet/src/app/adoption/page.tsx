@@ -1,8 +1,9 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { useQuery } from "@tanstack/react-query";
 import "swiper/css";
 import "swiper/css/pagination";
-import abandonani from "../../abandonanimal.json";
+import abandonData from '../../abandonanimal.json';
 import { useToggleNav } from "../components/hooks/useToggleNav";
 import Header from "../components/main/Header";
 
@@ -27,12 +28,15 @@ interface SlideData {
 
 const Adaoption = () => {
   const { isNavOpen, toggleNav } = useToggleNav(false);
-  const [adoptData, setAdoptData] = useState<SlideData[]>([]);
 
-  useEffect(() => {
-    if (!Array.isArray(abandonani)) return; // 배열이 아닐 경우 조기 종료
-
-    const adoptData = (abandonani as any[])
+  // useQuery가 데이터를 직접 fetch하고 캐싱하게 한다.
+  const { data: adoptData, isLoading, error } = useQuery({
+    queryKey: ['abandonani'], // 키값으로 데이터 캐싱
+    queryFn: () => {
+      return abandonData as any[];
+    },
+    select: (data) => {
+      return data
       .filter((data) => data.STATE_NM === "보호중")
       .map((data) => ({
         sigun: data.SIGUN_NM,
@@ -53,9 +57,11 @@ const Adaoption = () => {
         thnail: data.THNAIL_IMAGE_COURS,
         tel: data.SLTR_TELNO,
       }));
-    setAdoptData(adoptData);
-  }, [abandonani]);
-
+    }
+  });
+  if (isLoading) return <div>데이터를 불러오는 중...</div>
+  if (error) return <div>에러 발생: {(error as Error).message}</div>
+  
   return (
     <>
       <Header isNavOpen={isNavOpen} toggleNav={toggleNav} />
