@@ -1,5 +1,5 @@
 import Script from "next/script";
-import MapComponent from "../components/Map/MapComponent";
+import MapComponent from "../components/map/MapComponent";
 import { useToggleNav } from "../components/hooks/useToggleNav";
 import Header from "../components/main/Header";
 

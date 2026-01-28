@@ -1,9 +1,9 @@
 "use client";
 
 import Script from "next/script";
-import { Coordinates } from "../components/Map/types/store";
-import { NaverMap } from "../components/Map/types/map";
-import { INITIAL_CENTER } from "../components/Map/MapComponent";
+import { Coordinates } from "../components/map/types/store";
+import { NaverMap } from "../components/map/types/map";
+import { INITIAL_CENTER } from "../components/map/MapComponent";
 import { AiOutlineEnvironment } from "react-icons/ai";
 import { GiPositionMarker } from "react-icons/gi";
 import { useEffect, useRef, useState } from "react";

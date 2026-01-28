@@ -15,7 +15,7 @@ export default function HotelShelter() {
               }}
             >
               <img
-                src="/picture_images/localhotel/localhotelimg.png"
+                src="/images/localhotel/localhotelimg.png"
                 className="h-full object-contain"
                 alt=""
                 style={{ width: "50%", height: "90%" }}
@@ -32,7 +32,7 @@ export default function HotelShelter() {
               }}
             >
               <img
-                src="/picture_images/localhotel/adoptbutton.png"
+                src="/images/localhotel/adoptbutton.png"
                 className="w-full h-full object-contain"
                 alt=""
                 style={{ width: "50%" }}
