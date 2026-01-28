@@ -16,7 +16,6 @@ const Home = () => {
             <Header isNavOpen={isNavOpen} toggleNav={toggleNav}/>
             <HotelShelter/>
             <AdoptEmblaCarousel slides={SLIDES} options={OPTIONS}/>
-            <FestivalList/>
         </>
     )
 }
