@@ -8,12 +8,13 @@ import { IoIosArrowForward } from "react-icons/io";
 import abandonData from "../../abandonanimal.json";
 import Header from "../components/main/Header";
 
+
 const Adaoption = () => {
   const { isNavOpen, toggleNav } = useToggleNav(false);
   
   // pagination
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 4;
+  const itemsPerPage = 6;
   const pageLimit = 5;
   const today = new Date().toISOString().split('T')[0].replace(/-/g, '');
 
@@ -69,7 +70,7 @@ const Adaoption = () => {
   return (
     <>
       <Header isNavOpen={isNavOpen} toggleNav={toggleNav} />
-      <h1 className="flex justify-center text-3xl mb-10 mt-10">💗 유기동물 입양</h1>
+      <h1 className="flex justify-center text-3xl mb-10 mt-10">💗 반려동물 입양</h1>
       
       {/* 카드 리스트 섹션 */}
       <section className="flex justify-center items-start min-h-[700px]">
@@ -77,18 +78,18 @@ const Adaoption = () => {
           {currentItems?.map((data: any, index: number) => (
             <div
               key={index}
-              className="flex flex-col md:flex-row items-center md:items-start rounded-3xl mb-10 bg-[#f3f4f6] p-10 w-full h-auto md:h-[370px]"
+              className="flex flex-col md:flex-row items-center md:items-start rounded-3xl mb-10 bg-[#f3f4f6] p-10 w-full h-auto md:h-[360px]"
             >
               {/* 텍스트 정보 */}
-              <div className="flex flex-col items-start text-black text-base space-y-1 w-full md:w-[350px]">
+              <div className="flex flex-col items-start text-black text-base space-y-1 mr-5 w-full md:w-[360px]">
                 <div className="flex text-xl mb-5">
                   <span className="mr-3 inline-flex items-center px-2.5 py-0.5 rounded-full text-lg font-medium bg-green-100 text-green-800">{data.state}</span>
                   <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-lg ${data.sex === "F" ? "bg-pink-100 text-pink-800" : "bg-blue-100 text-blue-800"}`}>
                     {data.sex === "F" ? "암컷" : "수컷"}
                   </span>
                 </div>
-                <div className="flex flex-col text-md space-y-2 mr-10">
-                  <span>{data.number}</span>
+                <div className="flex flex-col text-md space-y-2">
+                  <span>공고번호 : {data.number}</span>
                   <span>나 이 : {data.age}</span>
                   <span>체 중 : {data.kg}</span>
                   <span>보호소명 : {data.shelter}</span>
